@@ -1,16 +1,14 @@
 import {
-  THIRD_NOTIFICATION_DAYS,
   FIRST_NOTIFICATION_DAYS,
-  SECOND_NOTIFICATION_DAYS,
+  LAST_NOTIFICATION_DAYS,
   CLOSURE_DAY,
 } from './constants';
 import { getFinalDay, now } from './date';
 import { NotificationDay } from './types';
 
 const NOTIFICATION_DAY_TO_EMOJI = {
-  [THIRD_NOTIFICATION_DAYS]: '1️⃣',
-  [SECOND_NOTIFICATION_DAYS]: '2️⃣',
-  [FIRST_NOTIFICATION_DAYS]: '3️⃣',
+  [FIRST_NOTIFICATION_DAYS]: '2️⃣',
+  [LAST_NOTIFICATION_DAYS]: '1️⃣',
 };
 
 const getPeriod = () => {
@@ -26,8 +24,8 @@ export const createFirstMessage = () =>
   `Ahoj <!channel> 👋, blíží se nám další uzávěrka fakturačního období, tentokrát za *${getPeriod()}*. Začněte si prosím chystat vaše worklogy a mějte vše *${getFinalDay()}. do 12:00* připraveno. Díky moc! 🫶`;
 
 export const createNotificationMessage = (day: NotificationDay) => {
-  const days = day === THIRD_NOTIFICATION_DAYS ? 'den' : 'dny';
-  const lasts = day === THIRD_NOTIFICATION_DAYS ? 'zbývá' : 'zbývají';
+  const days = day === LAST_NOTIFICATION_DAYS ? 'den' : 'dny';
+  const lasts = day === LAST_NOTIFICATION_DAYS ? 'zbývá' : 'zbývají';
   return `📣 <!channel> Do uzávěrky worklogů ${lasts} ${NOTIFICATION_DAY_TO_EMOJI[day]} ${days}`;
 };
 

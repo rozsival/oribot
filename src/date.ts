@@ -1,9 +1,8 @@
 import {
   CLOSURE_DAY,
   FIRST_MESSAGE_DAYS,
-  THIRD_NOTIFICATION_DAYS,
   FIRST_NOTIFICATION_DAYS,
-  SECOND_NOTIFICATION_DAYS,
+  LAST_NOTIFICATION_DAYS,
 } from './constants';
 
 const SUNDAY = 0;
@@ -28,8 +27,5 @@ export const getFirstMessageDay = () => getFinalDay() - FIRST_MESSAGE_DAYS;
 export const getFirstNotificationDay = () =>
   getFinalDay() - FIRST_NOTIFICATION_DAYS;
 
-export const getSecondNotificationDay = () =>
-  getFinalDay() - SECOND_NOTIFICATION_DAYS;
-
-export const getThirdNotificationDay = () =>
-  getFinalDay() - THIRD_NOTIFICATION_DAYS;
+export const getLastNotificationDay = () =>
+  getFinalDay() - LAST_NOTIFICATION_DAYS;
