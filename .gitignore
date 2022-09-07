@@ -24,5 +24,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 # build
+.heroku
 build
 
