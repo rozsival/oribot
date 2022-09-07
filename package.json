@@ -1,0 +1,57 @@
+{
+  "name": "oribot",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Where's your worklog?",
+  "license": "UNLICENSED",
+  "author": "Vít Rozsíval <vit.rozsival@apitree.cz>",
+  "main": "build/app.js",
+  "engines": {
+    "node": ">=16.15"
+  },
+  "scripts": {
+    "build": "run-s build:clean build:ts",
+    "build:clean": "rimraf build",
+    "build:ts": "tsc --project tsconfig.build.json",
+    "eslint": "eslint --cache --ext js,ts,tsx .",
+    "eslint:fix": "yarn eslint --fix",
+    "fix": "run-s ts prettier:fix eslint:fix",
+    "prebuild": "yarn qa",
+    "prettier": "prettier --check './**/*.{json,md,yml}'",
+    "prettier:fix": "yarn prettier --write",
+    "qa": "run-s ts prettier eslint",
+    "start": "node build/app.js",
+    "ts": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "@slack/bolt": "3.12.1",
+    "dotenv": "16.0.2",
+    "node-schedule": "2.1.0",
+    "nodemon": "2.0.19"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "@types/node": "16.11.42",
+    "@types/node-schedule": "2.1.0",
+    "@typescript-eslint/eslint-plugin": "5.36.2",
+    "@typescript-eslint/parser": "5.36.2",
+    "eslint": "8.19.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-import-resolver-typescript": "3.1.2",
+    "eslint-plugin-formatjs": "4.0.2",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-unicorn": "42.0.0",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "husky": "8.0.1",
+    "is-ci": "3.0.1",
+    "lint-staged": "13.0.3",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.7.1",
+    "prettier-plugin-package": "1.3.0",
+    "rimraf": "3.0.2",
+    "typescript": "4.7.4"
+  }
+}
