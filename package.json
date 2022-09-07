@@ -4,7 +4,7 @@
   "private": true,
   "description": "Where's your worklog?",
   "license": "UNLICENSED",
-  "author": "Vít Rozsíval <vit.rozsival@apitree.cz>",
+  "author": "Vít Rozsíval <mail@vitrozsival.cz>",
   "main": "build/app.js",
   "engines": {
     "node": ">=16.15"
@@ -21,7 +21,7 @@
     "prettier": "prettier --check './**/*.{json,md,yml}'",
     "prettier:fix": "yarn prettier --write",
     "qa": "run-s ts prettier eslint",
-    "start": "node build/app.js",
+    "start": "nodemon build/app.js",
     "ts": "tsc --project tsconfig.json"
   },
   "dependencies": {
