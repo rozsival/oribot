@@ -21,7 +21,7 @@ const getPeriod = () => {
 };
 
 export const createFirstMessage = () =>
-  `Ahoj <!channel> 👋, blíží se nám další uzávěrka fakturačního období, tentokrát za *${getPeriod()}*. Začněte si prosím chystat vaše worklogy a mějte vše *${getFinalDay()}. do 12:00* připraveno. Díky moc! 🫶`;
+  `Ahoj <!channel> 👋, blíží se nám další uzávěrka fakturačního období, tentokrát *${getPeriod()}*. Začněte si prosím chystat vaše worklogy a mějte vše *${getFinalDay()}. do 12:00* připraveno. Díky moc! 🫶`;
 
 export const createNotificationMessage = (day: NotificationDay) => {
   const days = day === LAST_NOTIFICATION_DAYS ? 'den' : 'dny';
