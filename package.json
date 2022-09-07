@@ -20,14 +20,14 @@
     "prettier": "prettier --check './**/*.{json,md}'",
     "prettier:fix": "yarn prettier --write",
     "qa": "run-s ts prettier eslint",
-    "start": "NODE_ENV=production nodemon build/app.js",
+    "start": "pm2-runtime start ecosystem.config.js --env production",
     "ts": "tsc --project tsconfig.json"
   },
   "dependencies": {
     "@slack/bolt": "3.12.1",
     "dotenv": "16.0.2",
     "node-schedule": "2.1.0",
-    "nodemon": "2.0.19"
+    "pm2": "5.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.1.2",
