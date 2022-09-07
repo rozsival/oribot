@@ -5,7 +5,6 @@
   "description": "Where's your worklog?",
   "license": "UNLICENSED",
   "author": "Vít Rozsíval <mail@vitrozsival.cz>",
-  "main": "build/app.js",
   "engines": {
     "node": ">=16.15"
   },
