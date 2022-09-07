@@ -1,7 +1,7 @@
 import {
-  NOTIFICATION_ONE_DAY,
-  NOTIFICATION_THREE_DAYS,
-  NOTIFICATION_TWO_DAYS,
+  THIRD_NOTIFICATION_DAYS,
+  FIRST_NOTIFICATION_DAYS,
+  SECOND_NOTIFICATION_DAYS,
 } from './constants';
 
 export type SendMessageProperties = {
@@ -9,6 +9,6 @@ export type SendMessageProperties = {
 };
 
 export type NotificationDay =
-  | typeof NOTIFICATION_ONE_DAY
-  | typeof NOTIFICATION_TWO_DAYS
-  | typeof NOTIFICATION_THREE_DAYS;
+  | typeof THIRD_NOTIFICATION_DAYS
+  | typeof SECOND_NOTIFICATION_DAYS
+  | typeof FIRST_NOTIFICATION_DAYS;

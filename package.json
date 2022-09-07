@@ -10,18 +10,18 @@
     "node": ">=16.15"
   },
   "scripts": {
-    "build": "run-s build:clean build:ts",
+    "build": "NODE_ENV=production run-s build:clean build:ts",
     "build:clean": "rimraf build",
     "build:ts": "tsc --project tsconfig.build.json",
-    "eslint": "eslint --cache --ext js,ts,tsx .",
+    "eslint": "eslint --cache --ext js,ts .",
     "eslint:fix": "yarn eslint --fix",
     "fix": "run-s ts prettier:fix eslint:fix",
     "prebuild": "yarn qa",
     "prepare": "is-ci || husky install",
-    "prettier": "prettier --check './**/*.{json,md,yml}'",
+    "prettier": "prettier --check './**/*.{json,md}'",
     "prettier:fix": "yarn prettier --write",
     "qa": "run-s ts prettier eslint",
-    "start": "nodemon build/app.js",
+    "start": "NODE_ENV=production nodemon build/app.js",
     "ts": "tsc --project tsconfig.json"
   },
   "dependencies": {

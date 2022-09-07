@@ -1,8 +1,10 @@
-import schedule from 'node-schedule';
+import { scheduleJob } from 'node-schedule';
 
+import { TZ } from './environment';
 import { run } from './run';
 
-const job = schedule.scheduleJob({ hour: 10 }, run);
+const job = scheduleJob({ hour: 10, tz: TZ }, run);
+
 process.on('SIGINT', () => {
   job.cancel();
   process.exit(0);

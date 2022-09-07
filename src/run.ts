@@ -1,13 +1,16 @@
 import {
-  FINAL_MESSAGE_DAY,
-  FIRST_MESSAGE_DAY,
-  FIRST_NOTIFICATION_DAY,
-  NOTIFICATION_ONE_DAY,
-  NOTIFICATION_THREE_DAYS,
-  NOTIFICATION_TWO_DAYS,
-  SECOND_NOTIFICATION_DAY,
-  THIRD_NOTIFICATION_DAY,
+  THIRD_NOTIFICATION_DAYS,
+  FIRST_NOTIFICATION_DAYS,
+  SECOND_NOTIFICATION_DAYS,
 } from './constants';
+import {
+  getFinalDay,
+  getFirstMessageDay,
+  getFirstNotificationDay,
+  getSecondNotificationDay,
+  getThirdNotificationDay,
+  now,
+} from './date';
 import {
   createFinalMessage,
   createFirstMessage,
@@ -16,24 +19,24 @@ import {
 import { sendMessage } from './send-message';
 
 export const run = async () => {
-  const date = new Date();
+  const date = now();
   const day = date.getDate();
   switch (day) {
-    case FIRST_MESSAGE_DAY:
+    case getFirstMessageDay():
       return sendMessage({ text: createFirstMessage() });
-    case FIRST_NOTIFICATION_DAY:
+    case getFirstNotificationDay():
       return sendMessage({
-        text: createNotificationMessage(NOTIFICATION_THREE_DAYS),
+        text: createNotificationMessage(FIRST_NOTIFICATION_DAYS),
       });
-    case SECOND_NOTIFICATION_DAY:
+    case getSecondNotificationDay():
       return sendMessage({
-        text: createNotificationMessage(NOTIFICATION_TWO_DAYS),
+        text: createNotificationMessage(SECOND_NOTIFICATION_DAYS),
       });
-    case THIRD_NOTIFICATION_DAY:
+    case getThirdNotificationDay():
       return sendMessage({
-        text: createNotificationMessage(NOTIFICATION_ONE_DAY),
+        text: createNotificationMessage(THIRD_NOTIFICATION_DAYS),
       });
-    case FINAL_MESSAGE_DAY:
+    case getFinalDay():
       return sendMessage({
         text: createFinalMessage(),
       });
