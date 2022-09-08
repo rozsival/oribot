@@ -30,3 +30,13 @@ This app is deployed to [Heroku](https://dashboard.heroku.com/apps/apitree-oribo
 - web (`yarn start:server`) – [public web](https://apitree-oribot.herokuapp.com) just for the funsies
 - scheduler – [add-on](https://dashboard.heroku.com/apps/apitree-oribot/scheduler) that pings the app every day at 7:30
   UTC to keep it awake before the schedule runs
+
+## ⚙️ Configuration
+
+The app uses `.env` config which is based on `.env.example`.
+
+- `PORT` – port on which the public web is served (use only locally, Heroku sets this value automatically)
+- `TOKEN` – Slack [OAuth token](https://api.slack.com/apps/A0422H11QKS/oauth?) for ApiTree workspace
+- `TZ` – timezone to be used for dates and times
+
+> ℹ️ Values can be set in the Heroku app [Settings](https://dashboard.heroku.com/apps/apitree-oribot/settings).
