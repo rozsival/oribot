@@ -4,4 +4,4 @@ dotenv.config();
 
 export const PORT = Number(process.env.PORT ?? '8080');
 export const TOKEN = process.env.TOKEN ?? '';
-export const TZ = process.env.TZ ?? 'Europe/Prague';
+export const TZ = process.env.TZ ?? 'UTC';
