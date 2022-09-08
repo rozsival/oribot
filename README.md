@@ -21,7 +21,7 @@ Simple <a href="https://api.slack.com/apps/A0422H11QKS">Slack bot</a> to annoy O
 <a href="https://dashboard.heroku.com/apps/apitree-oribot/activity"><img alt="Heroku" src="https://pyheroku-badge.herokuapp.com/?app=apitree-oribot"></a>
 </p>
 
-<p align="center">🌐 <a href="https://vitrozsival.cz">vitrozsival.cz</a> | 👨‍💻 <a href="https://github.com/rozsival">rozsival</a> | 🐦 <a href="https://twitter.com/vitrozsival">@vitrozsival</a> | 📷 <a href="https://instagram.com/vitrozsival">@vitrozsival</a></p>
+<p align="center">🌐 <a href="http://vitrozsival.cz">vitrozsival.cz</a> | 👨‍💻 <a href="https://github.com/rozsival">rozsival</a> | 🐦 <a href="https://twitter.com/vitrozsival">@vitrozsival</a> | 📷 <a href="https://instagram.com/vitrozsival">@vitrozsival</a></p>
 <hr>
 
 ## 💾 Installation
