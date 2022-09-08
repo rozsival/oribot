@@ -3,5 +3,5 @@ const eslint = 'eslint --cache --fix';
 module.exports = {
   './**/*.js': eslint,
   './**/*.ts': [() => 'tsc --project tsconfig.json', eslint],
-  './**/*.{html,json,md}': 'prettier --write',
+  './**/*.{html,json,md,yml}': 'prettier --write',
 };
