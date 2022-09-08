@@ -8,7 +8,7 @@ ApiTree
 <h1 align="center">OriBot</h1>
 
 <p align="center">
-Simple Slack bot to annoy Oriflame teammates with regular worklog agenda.
+Simple <a href="https://api.slack.com/apps/A0422H11QKS">Slack bot</a> to annoy Oriflame teammates with regular worklog agenda.
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@ This app is deployed to [Heroku](https://dashboard.heroku.com/apps/apitree-oribo
 
 ## ⚙️ Configuration
 
-The app uses `.env` config which is based on `.env.example`.
+The app uses `.env` config which is based on `.env.example`:
 
 - `PORT` – port on which the public web is served (use only locally, Heroku sets this value automatically)
 - `TOKEN` – Slack [OAuth token](https://api.slack.com/apps/A0422H11QKS/oauth?) for ApiTree workspace
