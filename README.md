@@ -8,18 +8,21 @@ ApiTree
 <h1 align="center">OriBot</h1>
 
 <p align="center">
-<a href="https://github.com/rozsival/oribot/actions/workflows/qa.yml"><img alt="QA" src="https://github.com/rozsival/oribot/actions/workflows/qa.yml/badge.svg"></a>
-<a href="https://github.com/rozsival/oribot/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/rozsival/oribot/actions/workflows/codeql.yml/badge.svg"></a>
-<a href="https://dashboard.heroku.com/apps/apitree-oribot/activity"><img alt="Heroku" src="https://pyheroku-badge.herokuapp.com/?app=apitree-oribot"></a>
-</p>
-
-<p align="center">
 Simple <a href="https://api.slack.com/apps/A0422H11QKS">Slack bot</a> to annoy Oriflame teammates with regular worklog agenda.
 </p>
 
 <p align="center">
 <img alt="Where's your worklog?" src="./public/wheres-your-worklog.gif">
 </p>
+
+<p align="center">
+<a href="https://github.com/rozsival/oribot/actions/workflows/qa.yml"><img alt="QA" src="https://github.com/rozsival/oribot/actions/workflows/qa.yml/badge.svg"></a>
+<a href="https://github.com/rozsival/oribot/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/rozsival/oribot/actions/workflows/codeql.yml/badge.svg"></a>
+<a href="https://dashboard.heroku.com/apps/apitree-oribot/activity"><img alt="Heroku" src="https://pyheroku-badge.herokuapp.com/?app=apitree-oribot"></a>
+</p>
+
+<p align="center">🌐 <a href="https://vitrozsival.cz">vitrozsival.cz</a> | 👨‍💻 <a href="https://github.com/rozsival">rozsival</a> | 🐦 <a href="https://twitter.com/vitrozsival">@vitrozsival</a> | 📷 <a href="https://instagram.com/vitrozsival">@vitrozsival</a></p>
+<hr>
 
 ## 💾 Installation
 
