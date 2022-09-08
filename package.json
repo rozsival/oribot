@@ -15,12 +15,13 @@
     "eslint": "eslint --cache --ext js,ts .",
     "eslint:fix": "yarn eslint --fix",
     "fix": "run-s ts prettier:fix eslint:fix",
-    "prebuild": "yarn qa",
+    "prebuild": "NODE_ENV=production yarn qa",
     "prepare": "is-ci || husky install",
     "prettier": "prettier --check './**/*.{json,md}'",
     "prettier:fix": "yarn prettier --write",
     "qa": "run-s ts prettier eslint",
-    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "start:app": "pm2-runtime start ecosystem.config.js --env production",
+    "start:server": "node build/server.js",
     "ts": "tsc --project tsconfig.json"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "consola": "2.15.3",
     "dotenv": "16.0.2",
     "node-schedule": "2.1.0",
+    "node-static": "0.7.11",
     "pm2": "5.2.0"
   },
   "devDependencies": {
@@ -35,6 +37,7 @@
     "@commitlint/config-conventional": "17.1.0",
     "@types/node": "16.11.42",
     "@types/node-schedule": "2.1.0",
+    "@types/node-static": "0.7.7",
     "@typescript-eslint/eslint-plugin": "5.36.2",
     "@typescript-eslint/parser": "5.36.2",
     "eslint": "8.19.0",
