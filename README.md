@@ -12,5 +12,5 @@ Simple Slack bot to annoy Oriflame teammates with regular worklog agenda.
 </p>
 
 <p align="center">
-<img alt="Where's your worklog?" src="./docs/wheres-your-worklog.gif">
+<img alt="Where's your worklog?" src="./public/wheres-your-worklog.gif">
 </p>
