@@ -4,7 +4,7 @@ import { scheduleJob } from 'node-schedule';
 import { TZ } from './environment';
 import { run } from './run';
 
-const job = scheduleJob({ hour: 8, minute: 5, tz: TZ }, run);
+const job = scheduleJob({ hour: 8, tz: TZ }, run);
 
 const shutdownGracefully = () => {
   job.cancel();
