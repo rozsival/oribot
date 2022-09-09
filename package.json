@@ -19,8 +19,8 @@
     "prettier": "prettier --check './**/*.{html,json,md,yml}'",
     "prettier:fix": "yarn prettier --write",
     "qa": "run-s ts prettier eslint",
-    "start": "run-p start:app start:server",
-    "start:app": "pm2-runtime start ecosystem.config.js",
+    "start": "pm2-runtime start ecosystem.config.js",
+    "start:app": "NODE_ENV=production node build/app.js",
     "start:server": "NODE_ENV=production node build/server.js",
     "ts": "tsc --project tsconfig.json"
   },
