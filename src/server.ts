@@ -21,8 +21,9 @@ const shutdownGracefully = () => {
     if (error) {
       logger.logError(error);
       process.exit(1);
+    } else {
+      process.exit(0);
     }
-    process.exit(0);
   });
 };
 

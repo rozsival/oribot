@@ -1,9 +1,6 @@
-import {
-  FIRST_NOTIFICATION_DAYS,
-  LAST_NOTIFICATION_DAYS,
-  CLOSURE_DAY,
-} from './constants';
+import { FIRST_NOTIFICATION_DAYS, LAST_NOTIFICATION_DAYS } from './constants';
 import { getFinalDay, now } from './date';
+import { CLOSURE_DAY } from './environment';
 import { NotificationDay } from './types';
 
 const NOTIFICATION_DAY_TO_EMOJI = {

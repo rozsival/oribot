@@ -1,5 +1,5 @@
 import { client } from './client';
-import { CHANNEL_ID } from './constants';
+import { CHANNEL_ID } from './environment';
 import { logger } from './logger';
 import { SendMessageProperties } from './types';
 

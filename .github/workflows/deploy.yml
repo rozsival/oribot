@@ -62,9 +62,10 @@ jobs:
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v0
         with:
-          env_vars: TZ=UTC
           image: ${{ env.IMAGE }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           region: ${{ env.REGION }}
-          secrets: TOKEN=slack-oauth-token:latest
+          secrets: |
+            CHANNEL_ID=slack-channel-id:latest
+            TOKEN=slack-oauth-token:latest
           service: ${{ secrets.GCP_SERVICE }}

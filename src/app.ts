@@ -1,10 +1,10 @@
 /* eslint-disable unicorn/no-process-exit */
 import { scheduleJob } from 'node-schedule';
 
-import { TZ } from './environment';
+import { JOB_HOUR, TZ } from './environment';
 import { run } from './run';
 
-const job = scheduleJob({ hour: 8, tz: TZ }, run);
+const job = scheduleJob({ hour: JOB_HOUR, tz: TZ }, run);
 
 const shutdownGracefully = () => {
   job.cancel();

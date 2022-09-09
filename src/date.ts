@@ -1,9 +1,9 @@
 import {
-  CLOSURE_DAY,
   FIRST_MESSAGE_DAYS,
   FIRST_NOTIFICATION_DAYS,
   LAST_NOTIFICATION_DAYS,
 } from './constants';
+import { CLOSURE_DAY } from './environment';
 
 const SUNDAY = 0;
 const SUNDAY_DIFF = 2;

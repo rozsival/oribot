@@ -37,13 +37,22 @@ via [Deploy action](.github/workflows/deploy.yml) on push to `main` branch.
 
 After each deployment a `pm2` process is started with `yarn start` managing:
 
-- app (`yarn start:app`) – bot worker that runs messaging schedule every day at 8:00 UTC
+- app (`yarn start:app`) – bot worker that runs messaging schedule every day a specified time
 - server (`yarn start:server`) – [public web](https://oribot-vpnvbwijja-lm.a.run.app) just for the funsies
 
 ## ⚙️ Configuration
 
 The app uses `.env` config which is based on `.env.example`:
 
-- `PORT` – port on which the public web is served (use only locally, Cloud Run sets this value automatically)
+- `CHANNEL_ID` – Slack channel ID for messaging
+- `ClOSURE_DAY` – day of month on which the worklog agenda closes (defaults to `25`)
+- `JOB_HOUR` – hour at which the messaging schedule runs daily (defaults to `8`)
+- `PORT` – port on which the public web is served (defaults to `8080`)
 - `TOKEN` – Slack [OAuth token](https://api.slack.com/apps/A0422H11QKS/oauth?) for ApiTree workspace
 - `TZ` – timezone to be used for dates and times (defaults to `UTC`)
+
+> ⚠️ Values for `CHANNEL_ID` and `TOKEN` are mandatory and stored in
+> the [Secret Manager](https://console.cloud.google.com/security/secret-manager?project=apitree-oribot).
+
+> ℹ️ Channel ID can be obtained by right-clicking on the channel name in Slack and using `View channel details`
+> from the context menu.
