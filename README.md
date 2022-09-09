@@ -54,5 +54,4 @@ The app uses `.env` config which is based on `.env.example`:
 > ⚠️ Values for `CHANNEL_ID` and `TOKEN` are mandatory and stored in
 > the [Secret Manager](https://console.cloud.google.com/security/secret-manager?project=apitree-oribot).
 
-> ℹ️ Channel ID can be obtained by right-clicking on the channel name in Slack and using `View channel details`
-> from the context menu.
+> ℹ️ Get the channel ID by right-clicking on its name in Slack and using `View channel details` from the context menu.
