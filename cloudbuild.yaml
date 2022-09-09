@@ -1,0 +1,21 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'gcr.io/apitree-oribot/oribot:$SHORT_SHA', '-f', 'Dockerfile', '.' ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'tag', 'gcr.io/apitree-oribot/oribot:$SHORT_SHA', 'gcr.io/apitree-oribot/oribot:latest' ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'tag', 'gcr.io/apitree-oribot/oribot:$SHORT_SHA', 'gcr.io/apitree-oribot/oribot:$BRANCH_NAME' ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'gcr.io/apitree-oribot/oribot:$SHORT_SHA' ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'gcr.io/apitree-oribot/oribot:latest' ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'gcr.io/apitree-oribot/oribot:$BRANCH_NAME' ]
+
+images:
+  - 'gcr.io/apitree-oribot/oribot'
