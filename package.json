@@ -9,7 +9,7 @@
     "node": ">=16.15"
   },
   "scripts": {
-    "build": "NODE_ENV=production run-s qa build:clean build:ts",
+    "build": "NODE_ENV=production run-s build:clean build:ts",
     "build:clean": "rimraf build",
     "build:ts": "tsc --project tsconfig.build.json",
     "eslint": "eslint --cache --ext js,ts .",
@@ -20,7 +20,7 @@
     "prettier:fix": "yarn prettier --write",
     "qa": "run-s ts prettier eslint",
     "start": "run-p start:app start:server",
-    "start:app": "pm2-runtime start ecosystem.config.js --env production",
+    "start:app": "pm2-runtime start ecosystem.config.js",
     "start:server": "NODE_ENV=production node build/server.js",
     "ts": "tsc --project tsconfig.json"
   },

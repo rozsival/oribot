@@ -1,0 +1,52 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node version
+        id: nvm
+        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+      - name: Setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
+      - name: Setup yarn cache
+        id: yarncache
+        run: echo ::set-output name=dir::$(yarn cache dir)
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarncache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: yarn install
+      - name: Run QA
+        env:
+          NODE_ENV: production
+        run: yarn qa
+  deploy:
+    needs: qa
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
+    steps:
+      - name: Authenticate
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@v0
+        with:
+          env_vars: TZ=UTC
+          image: ${{ secrets.GCP_IMAGE }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          region: europe-central2
+          secrets: TOKEN=slack-oauth-token:latest
+          service: ${{ secrets.GCP_SERVICE }}

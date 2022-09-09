@@ -1,5 +1,3 @@
-name: QA
-
 on:
   push:
     branches:
@@ -7,14 +5,13 @@ on:
 
 jobs:
   setup:
-    name: Setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup node version
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
         id: nvm
+        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
       - name: Setup node.js
         uses: actions/setup-node@v3
         with:
@@ -31,8 +28,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Cache setup
-        uses: actions/cache@v3
         id: cache-setup
+        uses: actions/cache@v3
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
@@ -43,15 +40,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup node version
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
         id: nvm
+        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
       - name: Setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
       - name: Restore setup
-        uses: actions/cache@v3
         id: restore-setup
+        uses: actions/cache@v3
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
@@ -64,15 +61,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup node version
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
         id: nvm
+        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
       - name: Setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
       - name: Restore setup
-        uses: actions/cache@v3
         id: restore-setup
+        uses: actions/cache@v3
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
@@ -85,15 +82,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup node version
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
         id: nvm
+        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
       - name: Setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
       - name: Restore setup
-        uses: actions/cache@v3
         id: restore-setup
+        uses: actions/cache@v3
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
@@ -106,15 +103,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup node version
-        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
         id: nvm
+        run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
       - name: Setup node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
       - name: Restore setup
-        uses: actions/cache@v3
         id: restore-setup
+        uses: actions/cache@v3
         with:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
