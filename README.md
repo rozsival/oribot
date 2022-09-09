@@ -46,4 +46,4 @@ The app uses `.env` config which is based on `.env.example`:
 
 - `PORT` – port on which the public web is served (use only locally, Cloud Run sets this value automatically)
 - `TOKEN` – Slack [OAuth token](https://api.slack.com/apps/A0422H11QKS/oauth?) for ApiTree workspace
-- `TZ` – timezone to be used for dates and times
+- `TZ` – timezone to be used for dates and times (defaults to `UTC`)
