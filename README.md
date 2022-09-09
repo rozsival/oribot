@@ -33,19 +33,18 @@ yarn install
 
 ## 🚀 Deployment
 
-This app is deployed to [Heroku](https://dashboard.heroku.com/apps/apitree-oribot). It uses free dynos for running:
+This app is deployed to [Google Cloud Run](https://console.cloud.google.com/run/detail/europe-central2/oribot/)
+via [Deploy action](.github/workflows/deploy.yml) on push to `main` branch.
 
-- worker (`yarn start:app`) – bot worker that runs messaging schedule every day at 8:05 UTC
-- web (`yarn start:server`) – [public web](https://apitree-oribot.herokuapp.com) just for the funsies
-- scheduler – [add-on](https://dashboard.heroku.com/apps/apitree-oribot/scheduler) that pings the app every day at 8:00
-  UTC to wake it up before the schedule runs
+After each deployment a `pm2` process is started with `yarn start` managing:
+
+- app (`yarn start:app`) – bot worker that runs messaging schedule every day at 8:00 UTC
+- server (`yarn start:server`) – [public web](https://oribot-vpnvbwijja-lm.a.run.app) just for the funsies
 
 ## ⚙️ Configuration
 
 The app uses `.env` config which is based on `.env.example`:
 
-- `PORT` – port on which the public web is served (use only locally, Heroku sets this value automatically)
+- `PORT` – port on which the public web is served (use only locally, Cloud Run sets this value automatically)
 - `TOKEN` – Slack [OAuth token](https://api.slack.com/apps/A0422H11QKS/oauth?) for ApiTree workspace
 - `TZ` – timezone to be used for dates and times
-
-> ℹ️ Values can be set in the Heroku app [Settings](https://dashboard.heroku.com/apps/apitree-oribot/settings).
