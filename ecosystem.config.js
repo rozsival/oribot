@@ -1,4 +1,5 @@
-const apps = ['app', 'server'].map((app) => ({
+const apps = ['app', 'server'];
+const createApp = (app) => ({
   name: `oribot-${app}`,
   script: `./build/${app}.js`,
   instances: 1,
@@ -6,8 +7,8 @@ const apps = ['app', 'server'].map((app) => ({
   env: {
     NODE_ENV: 'production',
   },
-}));
+});
 
 module.exports = {
-  apps,
+  apps: apps.map(createApp),
 };
