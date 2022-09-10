@@ -20,7 +20,6 @@ Simple <a href="https://api.slack.com/apps/A0422H11QKS">Slack bot</a> to annoy O
 <a href="https://github.com/rozsival/oribot/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/rozsival/oribot/actions/workflows/codeql.yml/badge.svg"></a>
 <a href="https://github.com/rozsival/oribot/actions/workflows/deploy.yml"><img alt="Deploy" src="https://github.com/rozsival/oribot/actions/workflows/deploy.yml/badge.svg"></a>
 
-<p align="center">🌐 <a href="http://vitrozsival.cz">vitrozsival.cz</a> | 👨‍💻 <a href="https://github.com/rozsival">rozsival</a> | 🐦 <a href="https://twitter.com/vitrozsival">@vitrozsival</a> | 📷 <a href="https://instagram.com/vitrozsival">@vitrozsival</a></p>
 <hr>
 
 ## 💾 Installation
