@@ -37,7 +37,7 @@ via [Deploy action](.github/workflows/deploy.yml) on push to `main` branch.
 
 After each deployment two parallel processes are started with `yarn start`:
 
-- app (`yarn start:app`) – bot worker that runs messaging schedule every day a specified time
+- app (`yarn start:app`) – bot worker that runs messaging schedule every day at specified time
 - server (`yarn start:server`) – [public web](https://oribot-vpnvbwijja-lm.a.run.app) just for the funsies
 
 ## ⚙️ Configuration
