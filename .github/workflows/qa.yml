@@ -118,4 +118,6 @@ jobs:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
       - name: Run eslint
+        env:
+          NODE_ENV: production
         run: yarn eslint
