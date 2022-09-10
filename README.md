@@ -57,4 +57,4 @@ The app uses `.env` config which is based on `.env.example`:
 
 > ℹ️ Right click on channel name in Slack and use `View channel details` to find channel ID.
 
-> 🎄 By default, January and December are skipped in schedule due to end-of-year specific closure.
+> 🎄 By default, December and January are skipped in schedule due to end-of-year specific closure.
