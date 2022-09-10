@@ -9,6 +9,7 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:import/typescript',
     'plugin:prettier/recommended',
     'plugin:unicorn/recommended',
@@ -21,7 +22,7 @@ module.exports = {
       modules: true,
     },
     ecmaVersion: 2022,
-    jsxPragma: undefined,
+    jsxPragma: null,
     project: 'tsconfig.json',
     sourceType: 'module',
     tsconfigRootDir: '.',

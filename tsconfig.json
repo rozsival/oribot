@@ -15,6 +15,6 @@
     "strict": true,
     "target": "esnext"
   },
-  "include": [".eslintrc.js", "**/*.js", "**/*.ts"],
+  "include": ["**/*.js", "**/*.ts"],
   "exclude": ["build", "node_modules"]
 }
