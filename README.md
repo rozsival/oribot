@@ -35,7 +35,7 @@ yarn install
 This app is deployed to [Google Cloud Run](https://console.cloud.google.com/run/detail/europe-central2/oribot/)
 via [Deploy action](.github/workflows/deploy.yml) on push to `main` branch.
 
-After each deployment a `pm2` process is started with `yarn start` managing:
+After each deployment two parallel processes are started with `yarn start`:
 
 - app (`yarn start:app`) – bot worker that runs messaging schedule every day a specified time
 - server (`yarn start:server`) – [public web](https://oribot-vpnvbwijja-lm.a.run.app) just for the funsies
