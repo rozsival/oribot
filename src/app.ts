@@ -1,11 +1,14 @@
 /* eslint-disable unicorn/no-process-exit */
-import { scheduleJob } from 'node-schedule';
+import { Range, scheduleJob } from 'node-schedule';
 
-import { JOB_HOUR, TZ } from './environment';
+import { JOB_HOUR, JOB_MONTH_END, JOB_MONTH_START, TZ } from './environment';
 import { logger } from './logger';
 import { run } from './run';
 
-const job = scheduleJob({ hour: JOB_HOUR, tz: TZ }, run);
+const job = scheduleJob(
+  { hour: JOB_HOUR, month: new Range(JOB_MONTH_START, JOB_MONTH_END), tz: TZ },
+  run,
+);
 logger.logSuccess('Slack bot messaging scheduled');
 
 const shutdownGracefully = () => {

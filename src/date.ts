@@ -2,23 +2,26 @@ import {
   FIRST_MESSAGE_DAYS,
   FIRST_NOTIFICATION_DAYS,
   LAST_NOTIFICATION_DAYS,
+  SATURDAY,
+  SATURDAY_DIFF,
+  SUNDAY,
+  SUNDAY_DIFF,
 } from './constants';
 import { CLOSURE_DAY } from './environment';
 
-const SUNDAY = 0;
-const SUNDAY_DIFF = 2;
-const SATURDAY = 6;
-const SATURDAY_DIFF = 1;
-
 export const now = () => new Date();
+
+export const formatDay = (date: Date) => date.getDay() + 1;
+
+export const formatMonth = (date: Date) => date.getMonth() + 1;
 
 export const getFinalDay = () => {
   const date = now();
   date.setDate(CLOSURE_DAY);
-  const day = date.getDay();
+  const day = formatDay(date);
   const final = date.getDate();
-  if (day === SUNDAY) return final - SUNDAY_DIFF;
   if (day === SATURDAY) return final - SATURDAY_DIFF;
+  if (day === SUNDAY) return final - SUNDAY_DIFF;
   return final;
 };
 
