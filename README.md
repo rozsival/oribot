@@ -45,12 +45,12 @@ The app uses `.env` config which is based on `.env.example`:
 
 - `CHANNEL_ID` – Slack channel ID for messaging
 - `ClOSURE_DAY` – day of month on which the worklog agenda closes (defaults to `25`)
-- `JOB_HOUR` – hour at which the messaging schedule runs daily (defaults to `8`)
+- `JOB_HOUR` – hour at which the messaging schedule runs daily (defaults to `10`)
 - `JOB_MONTH_END` – month in which the messaging schedule ends (defaults to `11`)
 - `JOB_MONTH_START` – month in which the messaging schedule starts (defaults to `2`)
 - `PORT` – port on which the public web is served (defaults to `8080`)
 - `TOKEN` – Slack [OAuth token](https://api.slack.com/apps/A0422H11QKS/oauth?) for ApiTree workspace
-- `TZ` – timezone to be used for dates and times (defaults to `UTC`)
+- `TZ` – timezone to be used for dates and times (defaults to `Europe/Prague`)
 
 > ⚠️ Values for `CHANNEL_ID` and `TOKEN` are mandatory and stored in
 > the [Secret Manager](https://console.cloud.google.com/security/secret-manager?project=apitree-oribot).

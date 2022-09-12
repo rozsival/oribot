@@ -9,7 +9,6 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:import/typescript',
     'plugin:prettier/recommended',
     'plugin:unicorn/recommended',
@@ -22,7 +21,7 @@ module.exports = {
       modules: true,
     },
     ecmaVersion: 2022,
-    jsxPragma: null,
+    jsxPragma: undefined,
     project: 'tsconfig.json',
     sourceType: 'module',
     tsconfigRootDir: '.',
@@ -108,6 +107,12 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
       },
+    },
+    {
+      files: ['*.ts', '*.tsx'],
+      extends: [
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+      ],
     },
   ],
 };
