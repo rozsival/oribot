@@ -39,6 +39,12 @@ After each deployment two parallel processes are started with `yarn start`:
 - app (`yarn start:app`) – bot worker that runs messaging schedule every day at specified time
 - server (`yarn start:server`) – [public web](https://oribot-vpnvbwijja-lm.a.run.app) just for the funsies
 
+To save as many resources as possible, the Cloud Run instance auto-scales to 0 and idles when inactive. For this reason,
+a [Cloud Scheduler job](https://console.cloud.google.com/cloudscheduler/jobs/edit/europe-central2/wakeup-oribot?project=apitree-oribot)
+is created to wake OriBot up every day at 9:55 AM (Europe/Prague).
+
+**Do not forget to update the schedule based on the configuration below.**
+
 ## ⚙️ Configuration
 
 The app uses `.env` config which is based on `.env.example`:
