@@ -1,7 +1,13 @@
 /* eslint-disable unicorn/no-process-exit */
 import { Range, RecurrenceRule, scheduleJob } from 'node-schedule';
 
-import { JOB_HOUR, JOB_MONTH_END, JOB_MONTH_START, TZ } from './environment';
+import {
+  CHANNEL_ID,
+  JOB_HOUR,
+  JOB_MONTH_END,
+  JOB_MONTH_START,
+  TZ,
+} from './environment';
 import { logger } from './logger';
 import { run } from './run';
 
@@ -15,7 +21,7 @@ const job = scheduleJob(rule, run);
 
 logger.logSuccess('Slack bot messaging scheduled');
 logger.logInfo(
-  JSON.stringify({ JOB_MONTH_START, JOB_MONTH_END, JOB_HOUR, TZ }),
+  JSON.stringify({ CHANNEL_ID, JOB_MONTH_START, JOB_MONTH_END, JOB_HOUR, TZ }),
 );
 
 const shutdownGracefully = () => {
