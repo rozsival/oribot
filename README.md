@@ -43,7 +43,7 @@ To save as many resources as possible, the Cloud Run instance auto-scales to 0 a
 a [Cloud Scheduler job](https://console.cloud.google.com/cloudscheduler/jobs/edit/europe-central2/wakeup-oribot?project=apitree-oribot)
 is created to wake OriBot up every day at 9:55 AM (Europe/Prague).
 
-**Do not forget to update the schedule based on the configuration below.**
+> 🧠 Do not forget to update the schedule based on the configuration below.
 
 ## ⚙️ Configuration
 
