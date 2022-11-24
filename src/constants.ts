@@ -5,5 +5,5 @@ export const JANUARY = 1;
 export const LAST_NOTIFICATION_DAYS = 1;
 export const SATURDAY = 6;
 export const SATURDAY_DIFF = 1;
-export const SUNDAY = 1;
+export const SUNDAY = 0;
 export const SUNDAY_DIFF = 2;

@@ -11,14 +11,12 @@ import { CLOSURE_DAY } from './environment';
 
 export const now = () => new Date();
 
-export const formatDay = (date: Date) => date.getDay() + 1;
-
 export const formatMonth = (date: Date) => date.getMonth() + 1;
 
 export const getFinalDay = () => {
   const date = now();
   date.setDate(CLOSURE_DAY);
-  const day = formatDay(date);
+  const day = date.getDay();
   const final = date.getDate();
   if (day === SATURDAY) return final - SATURDAY_DIFF;
   if (day === SUNDAY) return final - SUNDAY_DIFF;
