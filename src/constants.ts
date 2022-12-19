@@ -3,6 +3,7 @@ export const FIRST_MESSAGE_DAYS = 4;
 export const FIRST_NOTIFICATION_DAYS = 2;
 export const JANUARY = 1;
 export const LAST_NOTIFICATION_DAYS = 1;
+export const MAX_MONTH = 11;
 export const SATURDAY = 6;
 export const SATURDAY_DIFF = 1;
 export const SUNDAY = 0;
