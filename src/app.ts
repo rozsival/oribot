@@ -4,6 +4,8 @@ import { Range, RecurrenceRule, scheduleJob } from 'node-schedule';
 import { MAX_MONTH } from './constants';
 import {
   CHANNEL_ID,
+  DEBUG,
+  DEBUG_DATE,
   JOB_HOUR,
   JOB_MONTH_END,
   JOB_MONTH_START,
@@ -34,6 +36,12 @@ logger.logSuccess('Slack bot messaging scheduled');
 logger.logInfo(
   JSON.stringify({ CHANNEL_ID, JOB_MONTH_START, JOB_MONTH_END, JOB_HOUR, TZ }),
 );
+
+if (DEBUG) {
+  logger.logInfo('Running in DEBUG mode, not actually sending to Slack.');
+  if (DEBUG_DATE) logger.logInfo(`Using DEBUG_DATE: ${DEBUG_DATE}`);
+  run().catch(logger.logError);
+}
 
 const shutdownGracefully = () => {
   job.cancel();

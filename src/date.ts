@@ -7,9 +7,9 @@ import {
   SUNDAY,
   SUNDAY_DIFF,
 } from './constants';
-import { CLOSURE_DAY } from './environment';
+import { CLOSURE_DAY, DEBUG_DATE } from './environment';
 
-export const now = () => new Date();
+export const now = () => (DEBUG_DATE ? new Date(DEBUG_DATE) : new Date());
 
 export const formatMonth = (date: Date) => date.getMonth() + 1;
 
@@ -30,3 +30,9 @@ export const getFirstNotificationDay = () =>
 
 export const getLastNotificationDay = () =>
   getFinalDay() - LAST_NOTIFICATION_DAYS;
+
+export const isFinalDayAtWeekend = () => {
+  const date = now();
+  date.setDate(CLOSURE_DAY);
+  return [SATURDAY, SUNDAY].includes(date.getDay());
+};

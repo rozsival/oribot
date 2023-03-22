@@ -4,7 +4,7 @@ import {
   JANUARY,
   LAST_NOTIFICATION_DAYS,
 } from './constants';
-import { formatMonth, getFinalDay, now } from './date';
+import { formatMonth, getFinalDay, isFinalDayAtWeekend, now } from './date';
 import { CLOSURE_DAY } from './environment';
 import { NotificationDay } from './types';
 
@@ -27,8 +27,20 @@ const getPeriod = () => {
   return `${startDay}.${startMonth}. – ${endDay}.${endMonth}. včetně`;
 };
 
-export const createFirstMessage = () =>
-  `Ahoj <!channel> 👋, blíží se nám další uzávěrka fakturačního období, tentokrát *${getPeriod()}*. Začněte si prosím chystat vaše worklogy a mějte vše *${getFinalDay()}. do 12:00* připraveno. Díky moc! 🫶`;
+export const createFirstMessage = () => {
+  const message = [
+    `Ahoj <!channel> 👋, blíží se nám další uzávěrka fakturačního období, tentokrát *${getPeriod()}*.`,
+  ];
+  if (isFinalDayAtWeekend()) {
+    message.push(
+      `Jelikož nám konec období vychází na víkend, musíme vše uzavřít v pátek.`,
+    );
+  }
+  message.push(
+    `Začněte si prosím chystat vaše worklogy a mějte vše *${getFinalDay()}. do 12:00* připraveno. Díky moc! 🫶`,
+  );
+  return message.join(' ');
+};
 
 export const createNotificationMessage = (day: NotificationDay) => {
   const days = day === LAST_NOTIFICATION_DAYS ? 'den' : 'dny';

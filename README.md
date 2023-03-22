@@ -51,6 +51,8 @@ The app uses `.env` config which is based on `.env.example`:
 
 - `CHANNEL_ID` – Slack channel ID for messaging
 - `ClOSURE_DAY` – day of month on which the worklog agenda closes (defaults to `25`)
+- `DEBUG` – set `1` to disable sending messages and only output to console (defaults to `0`)
+- `DEBUG_DATE` – when `DEBUG=1` use this to simulate a specific date for test run (defaults to `undefined`)
 - `JOB_HOUR` – hour at which the messaging schedule runs daily (defaults to `10`)
 - `JOB_MONTH_END` – month in which the messaging schedule ends (defaults to `11`)
 - `JOB_MONTH_START` – month in which the messaging schedule starts (defaults to `2`)
