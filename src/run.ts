@@ -19,14 +19,18 @@ const getMessage = () => {
   const day = date.getDate();
   logger.logInfo(`DAY: ${day}`);
   switch (day) {
-    case getFirstMessageDay():
+    case getFirstMessageDay(): {
       return createFirstMessage();
-    case getFirstNotificationDay():
+    }
+    case getFirstNotificationDay(): {
       return createNotificationMessage(FIRST_NOTIFICATION_DAYS);
-    case getLastNotificationDay():
+    }
+    case getLastNotificationDay(): {
       return createNotificationMessage(LAST_NOTIFICATION_DAYS);
-    case getFinalDay():
+    }
+    case getFinalDay(): {
       return createFinalMessage();
+    }
   }
 };
 

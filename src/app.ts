@@ -1,4 +1,4 @@
-/* eslint-disable unicorn/no-process-exit */
+/* eslint-disable unicorn/no-process-exit,unicorn/prefer-top-level-await */
 import { Range, RecurrenceRule, scheduleJob } from 'node-schedule';
 
 import { MAX_MONTH } from './constants';
